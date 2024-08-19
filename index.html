@@ -2,97 +2,364 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-widht, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/main.css">
 
   <link rel="stylesheet" href="responsive.css">
 
-<link rel="stylesheet" href="style/owl/owl.carousel.min.css">
-<link rel="stylesheet" href="style/owl/owl.theme.default.min.css">
+  <link rel="stylesheet" href="style/owl/owl.carousel.min.css">
+  <link rel="stylesheet" href="style/owl/owl.theme.default.min.css">
 
-  <title> Netflix Clone</title>
+  <title>Netflix Clone</title>
+  <style>
+      .filme-principal {
+          position: relative;
+          margin-top: 20px;
+          max-width: 100%;
+          height: 500px;
+      }
+
+      .video-container {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          background-color: #000; /* Fundo preto para o vídeo */
+      }
+
+      .video-container iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+      }
+
+      .video-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          background: rgba(0, 0, 0, 0.5); /* Fundo preto com transparência */
+          padding: 20px;
+          box-sizing: border-box;
+          text-align: center;
+      }
+
+      .video-overlay .titulo {
+          font-size: 32px;
+          margin-bottom: 20px;
+      }
+
+      .video-overlay .descricao {
+          font-size: 18px;
+          margin-bottom: 30px;
+          max-width: 80%;
+      }
+
+      .video-overlay .botoes {
+          display: flex;
+          gap: 15px;
+      }
+
+      .video-overlay .botao {
+          border-radius: 10px;
+          padding: 10px 20px;
+          cursor: pointer;
+          background-color: #e50914;
+          color: white;
+          border: none;
+          font-size: 16px;
+      }
+
+      .video-overlay .botao i {
+          margin-right: 8px;
+      }
+
+      /* Estilo para esconder inicialmente as seções */
+      #filmes, #series {
+          display: none;
+      }
+  </style>
 </head>
 <body>
 <header>
     <div class="container">
-        <h2 class="logo">Netflix</h2>
+        <h2 class="logo">Stheflix</h2>
         <nav>
-           <a href="#" >Inicio</a>
-           <a href="#" >Séries</a>
-           <a href="#" >Filmes</a>
-           <a href="#" >Documentários</a>
+         <div style="margin-left: -20px;">
+            <a href="#" id="recomendacoes-link">Recomendações</a>
+            <a href="#" id="series-link">Séries</a>
+            <a href="#" id="filmes-link">Filmes</a>
+            <a href="#">Documentários</a>
+            <a href="#">Minha Lista</a>
+         </div>
         </nav>
     </div>
 </header>
-<main>
+
+<section id="principal">
     <div class="filme-principal">
-        <div class="container">
-            <h3 class="titulo">Rick and Morty</h3>
-            <p class="descricao">Rick é um velho mentalmente desequilibrado, mas cientificamente talentoso que se reconectou recentemente com sua família. Ele passa a maior parte do tempo envolvendo o jovem neto Morty em aventuras perigosas e estranhas no espaço e em universos alternativos. Compostos à vida familiar já instável de Morty, esses eventos causam muito sofrimento a Morty em casa e na escola.</p>
-        <div class="botoes">
-            <button role="button" class="botao">
-                <i class="fas fa-play"></i>
-                Assistir Agora
-            </button>
-            <button role="button"  class="botao">
-                <i class="fas fa-info-circle"></i>
-                Mais informações
-            </button>
+        <div class="video-container">
+            <iframe id="rickMortyVideo" src="https://www.youtube.com/embed/PkZtVBNkmso?autoplay=1&mute=1" 
+                    title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+            <div class="video-overlay">
+                <h3 class="titulo">Rick and Morty</h3>
+                <p class="descricao">Rick é um velho mentalmente desequilibrado, mas cientificamente talentoso que se reconectou recentemente com sua família. Ele passa a maior parte do tempo envolvendo o jovem neto Morty em aventuras perigosas e estranhas no espaço e em universos alternativos. Compostos à vida familiar já instável de Morty, esses eventos causam muito sofrimento a Morty em casa e na escola.</p>
+                <div class="botoes">
+                    <a href="https://www.youtube.com/watch?v=gmfIo77Aj68&t=2s">
+                        <button role="button" class="botao">
+                            <i class="fas fa-play"></i>
+                            Assistir Agora
+                        </button>
+                    </a>
+                    
+                
+                    <a href="https://rickemorty.fandom.com/pt-br/wiki/Rick_e_Morty_Wiki">
+                        <button role="button" class="botao">
+                            <i class="fas fa-play"></i>
+                            Mais informações
+                        </button>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</main>
-
-<div class="carrosel-filmes">
-    <div class="owl-carousel owl-theme">
-        <div class="item">
-            <img  class="box-filme" src="img/min1.jpg" alt="">
-
+    <p class="titulo">Top 10 series</p>
+    <div class="carrosel-series">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img class="box-serie" src="img/min21.jpg" alt="">
+                <p style="margin-left: 20px;margin-top: 10px;" >Bom dia, Verônica!</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min22.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Lupin</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min23.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >The Boys</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min24.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >House of dragons</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min25.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >The Witcher</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min26.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Wandinha</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min27.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Stranger Things</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min28.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Arcane</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min29.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >La Casa de Papel</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min30.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Jane the Virgin</p>
+            </div>
         </div>
-        <div class="item">
-            <img  class="box-filme" src="img/min2.jpg" alt="">
+        <p class="titulo">Top 10 filmes</p>
+        <div class="carrosel-series">
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <img class="box-serie" src="img/min11.jpg" alt="">
+                    <p style="margin-left: 20px;margin-top: 10px;" >Divertidamente</p>
+                </div>
+                <div class="item">
+                    <img class="box-serie" src="img/min12.jpg" alt="">
+                    <p style="margin-left: 10px;margin-top: 10px;" >O Diabo veste Prada</p>
+                </div>
+                <div class="item">
+                    <img class="box-serie" src="img/min13.jpg" alt="">
+                    <p style="margin-left: 10px;margin-top: 10px;" >Planeta dos macacos</p>
+                </div>
+                <div class="item">
+                    <img class="box-serie" src="img/min14.jpg" alt="">
+                    <p style="margin-left: 10px;margin-top: 10px;" >Minios</p>
+                </div>
+                <div class="item">
+                    <img class="box-serie" src="img/min15.jpg" alt="">
+                    <p style="margin-left: 10px;margin-top: 10px;" >Deadpool</p>
+                </div>
+                <div class="item">
+                    <img class="box-serie" src="img/min16.jpg" alt="">
+                    <p style="margin-left: 10px;margin-top: 10px;" >Velozes e Furiosos</p>
+                </div>
+                <div class="item">
+                    <img class="box-serie" src="img/min17.jpg" alt="">
+                    <p style="margin-left: 10px;margin-top: 10px;" >Jungle Cruise</p>
+                </div>
+                <div class="item">
+                    <img class="box-serie" src="img/min18.jpg" alt="">
+                    <p style="margin-left: 10px;margin-top: 10px;" >Os Croods</p>
+                </div>
+                <div class="item">
+                    <img class="box-serie" src="img/min19.jpg" alt="">
+                    <p style="margin-left: 10px;margin-top: 10px;" >A Babá</p>
+                </div>
+                <div class="item">
+                    <img class="box-serie" src="img/min20.jpg" alt="">
+                    <p style="margin-left: 10px;margin-top: 10px;" >Aladin</p>
+                </div>
+            </div>
+</section>
 
+<section id="series">
+    <div style="margin-top: 10px;"></div>
+    
+    <div class="carrosel-series">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img class="box-serie" src="img/min1.jpg" alt="">
+                <p style="margin-left: 20px; margin-top: 10px;">Peaky blinders</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min2.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >A maldição da residência hill</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min3.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Game of thrones</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min4.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Vikings</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min5.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Matéria Escura</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min6.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Os simpsons</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min7.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Os 100</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min8.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >The Big Bang Theory</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min9.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >O gambito da Rainha</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min10.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Lucifer</p>
+            </div>
         </div>
-        <div class="item">
-            <img  class="box-filme" src="img/min3.jpg" alt="">
+    </div>
+</section>
 
+<section id="filmes">
+   
+    <div class="carrosel-series">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img class="box-serie" src="img/min11.jpg" alt="">
+                <p style="margin-left: 20px;margin-top: 10px;" >Divertidamente</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min12.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >O Diabo veste Prada</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min13.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Planeta dos macacos</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min14.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Minios</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min15.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Deadpool</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min16.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Velozes e Furiosos</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min17.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Jungle Cruise</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min18.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Os Croods</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min19.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >A Babá</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min20.jpg" alt="">
+                <p style="margin-left: 10px;margin-top: 10px;" >Aladin</p>
+            </div>
         </div>
-        <div class="item">
-            <img  class="box-filme" src="img/min4.jpg" alt="">
-
-        </div>
-        <div class="item">
-            <img  class="box-filme" src="img/min5.jpg" alt="">
-
-        </div>
-        <div class="item">
-            <img  class="box-filme" src="img/min6.jpg" alt="">
-
-        </div>
-        <div class="item">
-            <img  class="box-filme" src="img/min7.jpg" alt="">
-
-        </div>
-        <div class="item">
-            <img  class="box-filme" src="img/min8.jpg" alt="">
-
-        </div>
-        <div class="item">
-            <img  class="box-filme" src="img/min9.jpg" alt="">
-
-        </div>
-        <div class="item">
-            <img  class="box-filme" src="img/min10.jpg" alt="">
-
-        </div>
-</div>
-</div>
+    </div>
+</section>
 
 <script src="https://kit.fontawesome.com/29c9e34f7d.js" crossorigin="anonymous"></script>
 <script src="js/owl/jquery.min.js"></script>
 <script src="js/owl/owl.carousel.min.js"></script>
 <script src="js/owl/setup.js"></script>
 
+<!-- JavaScript para reforçar o autoplay e controlar a navegação entre as seções -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const iframe = document.getElementById("rickMortyVideo");
+        iframe.src += "&autoplay=1";
+
+        const recomendacoesLink = document.getElementById("recomendacoes-link");
+        const seriesLink = document.getElementById("series-link");
+        const filmesLink = document.getElementById("filmes-link");
+
+        const principalSection = document.getElementById("principal");
+        const seriesSection = document.getElementById("series");
+        const filmesSection = document.getElementById("filmes");
+
+        recomendacoesLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            principalSection.style.display = 'block';
+            seriesSection.style.display = 'none';
+            filmesSection.style.display = 'none';
+        });
+
+        seriesLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            principalSection.style.display = 'none';
+            seriesSection.style.display = 'block';
+            filmesSection.style.display = 'none';
+        });
+
+        filmesLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            principalSection.style.display = 'none';
+            seriesSection.style.display = 'none';
+            filmesSection.style.display = 'block';
+        });
+    });
+</script>
 
 </body>
 </html>
