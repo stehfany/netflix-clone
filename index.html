@@ -571,19 +571,21 @@
 
     // Função para adicionar o evento a todos os botões de adicionar
     document.addEventListener('click', function(event) {
-        if (event.target.closest('.bi-plus-circle')) {
-            const button = event.target.closest('button');
-            const itemDiv = button.closest('.item'); // Seleciona a div mais próxima com a classe 'item'
-            if (itemDiv) {
-                const carouselContainer = document.querySelector('#mylist .owl-carousel');
-                const clonedItem = itemDiv.cloneNode(true); // Clona a div completa
-                clonedItem.querySelector('.add-button').remove(); // Remove o botão "Adicionar" do clone
-                
-                // Adiciona a div clonada ao carrossel e atualiza o carrossel
-                $(carouselContainer).trigger('add.owl.carousel', [clonedItem]).trigger('refresh.owl.carousel');
-            }
+    if (event.target.closest('.bi-plus-circle')) {
+        const button = event.target.closest('button');
+        const itemDiv = button.closest('.item'); // Seleciona a div mais próxima com a classe 'item'
+        if (itemDiv) {
+            const carouselContainer = document.querySelector('#mylist .owl-carousel');
+            const clonedItem = itemDiv.cloneNode(true); // Clona a div completa
+            clonedItem.querySelector('.add-button').remove(); // Remove o botão "Adicionar" do clone
+
+            // Adiciona o item clonado ao carrossel diretamente no DOM
+            $(carouselContainer).trigger('add.owl.carousel', [clonedItem]).trigger('refresh.owl.carousel');
         }
-    });
+    }
+});
+
+
 });
 </script>
 
