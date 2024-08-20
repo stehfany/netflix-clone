@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/main.css">
 
-  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="style/responsive.css">
 
   <link rel="stylesheet" href="style/owl/owl.carousel.min.css">
   <link rel="stylesheet" href="style/owl/owl.theme.default.min.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
 
   <title>Netflix Clone</title>
   <style>
@@ -83,7 +87,7 @@
       }
 
       /* Estilo para esconder inicialmente as seções */
-      #filmes, #series {
+      #filmes, #series, #document{
           display: none;
       }
   </style>
@@ -97,8 +101,8 @@
             <a href="#" id="recomendacoes-link">Recomendações</a>
             <a href="#" id="series-link">Séries</a>
             <a href="#" id="filmes-link">Filmes</a>
-            <a href="#">Documentários</a>
-            <a href="#">Minha Lista</a>
+            <a href="#" id="document-link">Documentários</a>
+            <a href="#" id="mylist-link" >Minha Lista</a>
          </div>
         </nav>
     </div>
@@ -135,44 +139,76 @@
     <p class="titulo">Top 10 series</p>
     <div class="carrosel-series">
         <div class="owl-carousel owl-theme">
-            <div class="item">
-                <img class="box-serie" src="img/min21.jpg" alt="">
-                <p style="margin-left: 20px;margin-top: 10px;" >Bom dia, Verônica!</p>
+            <div class="item" style="position: relative; display: inline-block;">
+                <img class="box-serie" src="img/min21.jpg" alt="" style="display: block; width: 100%;">
+                <button class="add-button" style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
+                <p style="margin-left: 20px; margin-top: 10px;">Bom dia, Verônica!</p>
             </div>
+            
+            
             <div class="item">
                 <img class="box-serie" src="img/min22.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >Lupin</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min23.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >The Boys</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min24.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >House of dragons</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min25.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >The Witcher</p>
             </div>
             <div class="item">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <img class="box-serie" src="img/min26.jpg" alt="">
                 <p style="margin-left: 10px;margin-top: 10px;" >Wandinha</p>
             </div>
             <div class="item">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <img class="box-serie" src="img/min27.jpg" alt="">
                 <p style="margin-left: 10px;margin-top: 10px;" >Stranger Things</p>
             </div>
             <div class="item">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <img class="box-serie" src="img/min28.jpg" alt="">
                 <p style="margin-left: 10px;margin-top: 10px;" >Arcane</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min29.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >La Casa de Papel</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min30.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: black;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >Jane the Virgin</p>
             </div>
         </div>
@@ -181,42 +217,72 @@
             <div class="owl-carousel owl-theme">
                 <div class="item">
                     <img class="box-serie" src="img/min11.jpg" alt="">
+                    <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                        <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                    </button>
                     <p style="margin-left: 20px;margin-top: 10px;" >Divertidamente</p>
                 </div>
                 <div class="item">
                     <img class="box-serie" src="img/min12.jpg" alt="">
+                    <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                        <i class="bi bi-plus-circle" style="font-size: 24px;  color: black;"></i>
+                    </button>
                     <p style="margin-left: 10px;margin-top: 10px;" >O Diabo veste Prada</p>
                 </div>
                 <div class="item">
                     <img class="box-serie" src="img/min13.jpg" alt="">
+                    <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                        <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                    </button>
                     <p style="margin-left: 10px;margin-top: 10px;" >Planeta dos macacos</p>
                 </div>
                 <div class="item">
                     <img class="box-serie" src="img/min14.jpg" alt="">
+                    <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                        <i class="bi bi-plus-circle" style="font-size: 24px;   color: black;"></i>
+                    </button>
                     <p style="margin-left: 10px;margin-top: 10px;" >Minios</p>
                 </div>
                 <div class="item">
                     <img class="box-serie" src="img/min15.jpg" alt="">
+                    <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                        <i class="bi bi-plus-circle" style="font-size: 24px;  color: black;"></i>
+                    </button>
                     <p style="margin-left: 10px;margin-top: 10px;" >Deadpool</p>
                 </div>
                 <div class="item">
                     <img class="box-serie" src="img/min16.jpg" alt="">
+                    <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                        <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                    </button>
                     <p style="margin-left: 10px;margin-top: 10px;" >Velozes e Furiosos</p>
                 </div>
                 <div class="item">
                     <img class="box-serie" src="img/min17.jpg" alt="">
+                    <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                        <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                    </button>
                     <p style="margin-left: 10px;margin-top: 10px;" >Jungle Cruise</p>
                 </div>
                 <div class="item">
                     <img class="box-serie" src="img/min18.jpg" alt="">
+                    <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                        <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                    </button>
                     <p style="margin-left: 10px;margin-top: 10px;" >Os Croods</p>
                 </div>
                 <div class="item">
                     <img class="box-serie" src="img/min19.jpg" alt="">
+                    <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                        <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                    </button>
                     <p style="margin-left: 10px;margin-top: 10px;" >A Babá</p>
                 </div>
                 <div class="item">
                     <img class="box-serie" src="img/min20.jpg" alt="">
+                    <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                        <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                    </button>
                     <p style="margin-left: 10px;margin-top: 10px;" >Aladin</p>
                 </div>
             </div>
@@ -229,42 +295,76 @@
         <div class="owl-carousel owl-theme">
             <div class="item">
                 <img class="box-serie" src="img/min1.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 20px; margin-top: 10px;">Peaky blinders</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min2.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >A maldição da residência hill</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min3.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >Game of thrones</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min4.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >Vikings</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min5.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >Matéria Escura</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min6.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >Os simpsons</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min7.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >Os 100</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min8.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >The Big Bang Theory</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min9.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >O gambito da Rainha</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min10.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
+
+                <span class="tooltip" style="display: none; position: absolute; top: 40px; right: 10px; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 5px 10px; border-radius: 5px; font-size: 14px;">
+                    Adicionar à minha lista
+                </span>
                 <p style="margin-left: 10px;margin-top: 10px;" >Lucifer</p>
             </div>
         </div>
@@ -277,88 +377,214 @@
         <div class="owl-carousel owl-theme">
             <div class="item">
                 <img class="box-serie" src="img/min11.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 20px;margin-top: 10px;" >Divertidamente</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min12.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: black;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >O Diabo veste Prada</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min13.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >Planeta dos macacos</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min14.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: black;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >Minios</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min15.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: black;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >Deadpool</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min16.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >Velozes e Furiosos</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min17.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >Jungle Cruise</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min18.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >Os Croods</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min19.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >A Babá</p>
             </div>
             <div class="item">
                 <img class="box-serie" src="img/min20.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
                 <p style="margin-left: 10px;margin-top: 10px;" >Aladin</p>
             </div>
         </div>
     </div>
 </section>
+<section id="document">
+   
+    <div class="carrosel-series">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img class="box-serie" src="img/min31.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
+                <p style="margin-left: 20px;margin-top: 10px;" >Dilema das redes</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min32.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
+                <p style="margin-left: 10px;margin-top: 10px;" >Black mirror</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min33.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
+                <p style="margin-left: 10px;margin-top: 10px;" >Mercury 13</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min34.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
+                <p style="margin-left: 10px;margin-top: 10px;" >Nosso planeta</p>
+            </div>
+            <div class="item">
+                <img class="box-serie" src="img/min35.jpg" alt="">
+                <button style="position: absolute; top: 10px; right: 10px; background-color: transparent; border: none; cursor: pointer;">
+                    <i class="bi bi-plus-circle" style="font-size: 24px; color: white;"></i>
+                </button>
+                <p style="margin-left: 10px;margin-top: 10px;" >Cleopatra</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<div id="mylist">
+    <div class="carrosel-series">
+        <div class="owl-carousel owl-theme">
+            <!-- As divs copiadas serão adicionadas aqui -->
+        </div>
+    </div>
+</div>
+
 
 <script src="https://kit.fontawesome.com/29c9e34f7d.js" crossorigin="anonymous"></script>
 <script src="js/owl/jquery.min.js"></script>
 <script src="js/owl/owl.carousel.min.js"></script>
 <script src="js/owl/setup.js"></script>
 
+
 <!-- JavaScript para reforçar o autoplay e controlar a navegação entre as seções -->
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const iframe = document.getElementById("rickMortyVideo");
-        iframe.src += "&autoplay=1";
+   document.addEventListener("DOMContentLoaded", function() {
+    const iframe = document.getElementById("rickMortyVideo");
+    iframe.src += "&autoplay=1";
 
-        const recomendacoesLink = document.getElementById("recomendacoes-link");
-        const seriesLink = document.getElementById("series-link");
-        const filmesLink = document.getElementById("filmes-link");
+    const recomendacoesLink = document.getElementById("recomendacoes-link");
+    const seriesLink = document.getElementById("series-link");
+    const filmesLink = document.getElementById("filmes-link");
+    const documentLink = document.getElementById("document-link");
+    const mylistLink = document.getElementById("mylist-link");
 
-        const principalSection = document.getElementById("principal");
-        const seriesSection = document.getElementById("series");
-        const filmesSection = document.getElementById("filmes");
+    const principalSection = document.getElementById("principal");
+    const seriesSection = document.getElementById("series");
+    const filmesSection = document.getElementById("filmes");
+    const documentSection = document.getElementById("document");
+    const mylistSection = document.getElementById("mylist");
 
-        recomendacoesLink.addEventListener('click', function(event) {
-            event.preventDefault();
-            principalSection.style.display = 'block';
-            seriesSection.style.display = 'none';
-            filmesSection.style.display = 'none';
-        });
-
-        seriesLink.addEventListener('click', function(event) {
-            event.preventDefault();
-            principalSection.style.display = 'none';
-            seriesSection.style.display = 'block';
-            filmesSection.style.display = 'none';
-        });
-
-        filmesLink.addEventListener('click', function(event) {
-            event.preventDefault();
-            principalSection.style.display = 'none';
-            seriesSection.style.display = 'none';
-            filmesSection.style.display = 'block';
-        });
+    recomendacoesLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        principalSection.style.display = 'block';
+        seriesSection.style.display = 'none';
+        filmesSection.style.display = 'none';
+        documentSection.style.display = 'none';
+        mylistSection.style.display = 'none';
     });
+
+    seriesLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        principalSection.style.display = 'none';
+        seriesSection.style.display = 'block';
+        filmesSection.style.display = 'none';
+        documentSection.style.display = 'none';
+        mylistSection.style.display = 'none';
+    });
+
+    filmesLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        principalSection.style.display = 'none';
+        seriesSection.style.display = 'none';
+        filmesSection.style.display = 'block';
+        documentSection.style.display = 'none';
+        mylistSection.style.display = 'none';
+    });
+
+    documentLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        principalSection.style.display = 'none';
+        seriesSection.style.display = 'none';
+        filmesSection.style.display = 'none';
+        documentSection.style.display = 'block';
+        mylistSection.style.display = 'none';
+    });
+
+    mylistLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        principalSection.style.display = 'none';
+        seriesSection.style.display = 'none';
+        filmesSection.style.display = 'none';
+        documentSection.style.display = 'none';
+        mylistSection.style.display = 'block';
+    });
+
+    // Função para adicionar o evento a todos os botões de adicionar
+    document.addEventListener('click', function(event) {
+        if (event.target.closest('.bi-plus-circle')) {
+            const button = event.target.closest('button');
+            const itemDiv = button.closest('.item'); // Seleciona a div mais próxima com a classe 'item'
+            if (itemDiv) {
+                const carouselContainer = document.querySelector('#mylist .owl-carousel');
+                const clonedItem = itemDiv.cloneNode(true); // Clona a div completa
+                clonedItem.querySelector('.add-button').remove(); // Remove o botão "Adicionar" do clone
+                
+                // Adiciona a div clonada ao carrossel e atualiza o carrossel
+                $(carouselContainer).trigger('add.owl.carousel', [clonedItem]).trigger('refresh.owl.carousel');
+            }
+        }
+    });
+});
 </script>
 
 </body>
